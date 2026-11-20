@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SkillNest | Learn. Build. Get Certified.</title>
+  <link href="bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Notification Bar (Lab 7) -->
+  <div id="notification-bar" style="display:none; background-color: #f8d7da; padding: 15px; text-align: center; position: fixed; top: 0; width: 100%; z-index: 10000; color: #721c24;">
+    <span><strong>Welcome to SkillNest!</strong> Explore our new features.</span>
+    <button id="dismiss-btn" class="btn btn-sm btn-outline-danger ms-3">Dismiss</button>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark site-navbar fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="home.html">
+        <span class="brand-name">SkillNest</span>
+        <small class="ms-2 nav-tagline m-0">Study with Buddy</small>
+      </a>
+
+      <!-- Lab 1: Responsive Navbar Toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto gap-4 align-items-center">
+          <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="../RuralConnect/index.html">Find a Job</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <header class="hero">
+    <div class="hero-overlay">
+      <div class="container hero-inner text-center">
+        <h1 class="hero-title">SkillNest</h1>
+        <p class="hero-sub">Learn. Build. Get Certified.</p>
+        <p class="hero-desc mx-auto">
+          Empower your learning journey with SkillNest — your one-stop hub to master new skills, explore curated resources, and earn valuable certifications.
+        </p>
+
+        <div class="hero-actions mt-4">
+          <a href="skills.html" class="btn btn-accent btn-lg me-3">Get Started</a>
+          <a href="../RuralConnect/index.html" class="btn btn-outline-accent btn-lg">Find a Job</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="features py-5">
+    <div class="container">
+      <h2 class="section-title mb-5 text-center">Why Choose SkillNest?</h2>
+      <div class="row text-center g-4">
+        <div class="col-md-4">
+          <div class="feature-card h-100">
+            <h4>Curated Resources</h4>
+            <p>Access organized playlists, documentation, and verified courses tailored to each skill.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card h-100">
+            <h4>Certification Pathways</h4>
+            <p>Discover both free and paid certifications to validate your learning effectively.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card h-100">
+            <h4>Clean & Responsive Design</h4>
+            <p>Experience a minimal yet modern interface that looks great on every device.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lab 1: Developer Portfolio (Bootstrap Grid) -->
+  <section class="portfolio-section py-5 bg-light text-dark">
+    <div class="container">
+      <h2 class="text-center mb-4 text-dark">Developer Portfolio</h2>
+      <div class="row text-center g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title text-dark">Om Hajarnis</h5>
+              <p class="card-text text-muted">Frontend Developer</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title text-dark">Atharv Bauchkar</h5>
+              <p class="card-text text-muted">UI/UX Designer</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title text-dark">Yashoda Desai</h5>
+              <p class="card-text text-muted">Backend Developer</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title text-dark">Samrudhi Chougule</h5>
+              <p class="card-text text-muted">Content Strategist</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer py-4">
+    <div class="container text-center">
+      <p class="mb-1">© 2025 SkillNest Study with Buddy</p>
+      <small class="text-muted">Made with dedication by Team SkillNest</small> 
+    </div>
+  </footer>
+
+  <script src="jquery.min.js"></script>
+  <!-- Optional: Include Bootstrap JS for navbar toggler if available locally -->
+  <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Lab 7: Interactive Notification Panel (jQuery Effects)
+      setTimeout(function() {
+        $("#notification-bar").slideDown(500);
+      }, 500); // Slight delay for effect
+
+      $("#dismiss-btn").click(function() {
+        $("#notification-bar").fadeOut(300);
+      });
+    });
+  </script>
+</body>
+</html>

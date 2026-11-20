@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job Details | RuralConnect</title>
+  <link href="../SkillNest/bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+
+  <nav class="navbar navbar-expand-lg navbar-dark site-navbar fixed-top" style="background: rgba(15, 23, 42, 0.95);">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <span class="brand-name text-success fw-bold" style="font-family: 'Playfair Display', serif; font-size: 1.6rem;">🌾 RuralConnect</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto gap-3 align-items-center">
+          <li class="nav-item"><a class="nav-link text-white" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-white active" href="jobs.html">Jobs</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="post-job.html">Post a Job</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="employers.html">Employers</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="profile.html">Profile</a></li>
+          <li class="nav-item"><a class="btn btn-outline-success btn-sm ms-2" href="../SkillNest/home.html">Learning Hub</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="py-5 mt-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card border-0 shadow-sm p-4 rounded-4">
+            <div class="card-body">
+              <h1 class="display-5 fw-bold text-dark mb-2">Farm Assistant</h1>
+              <p class="text-muted fs-5 mb-4">📍 Green Valley, Madhya Pradesh</p>
+
+              <h4 class="fw-bold text-dark mt-4">Job Description</h4>
+              <p class="text-muted">
+                We are looking for a dedicated Farm Assistant to help with crop
+                management, irrigation, harvesting, and maintenance. No prior
+                experience needed — training will be provided. A great opportunity
+                for individuals looking to start a career in agriculture.
+              </p>
+
+              <h4 class="fw-bold text-dark mt-4">Responsibilities:</h4>
+              <ul class="text-muted">
+                <li>Assist with planting and watering crops</li>
+                <li>Operate simple farm equipment (training provided)</li>
+                <li>Maintain cleanliness around the farm</li>
+                <li>Support in packaging and transporting produce</li>
+              </ul>
+
+              <h4 class="fw-bold text-dark mt-4">Requirements:</h4>
+              <ul class="text-muted">
+                <li>Physically fit and able to work outdoors</li>
+                <li>Team player with a positive attitude</li>
+                <li>Basic literacy preferred</li>
+              </ul>
+
+              <h4 class="fw-bold text-dark mt-4">Salary:</h4>
+              <p class="text-muted">₹8,000 - ₹10,000 per month (depending on experience)</p>
+
+              <h4 class="fw-bold text-dark mt-4">How to Apply:</h4>
+              <p class="text-muted">
+                Contact the employer directly at:<br>
+                <strong>📞 +91 98765 43210</strong><br>
+                or email <strong>greenvalleyfarms@gmail.com</strong>
+              </p>
+
+              <!-- Lab 5: Countdown Timer -->
+              <div class="alert alert-warning text-center mt-4 border-warning">
+                <h5 class="fw-bold text-dark mb-2">⏳ Hiring Deadline</h5>
+                <div id="timer-display" class="fs-4 fw-bold text-danger" style="letter-spacing: 2px;">
+                  Loading...
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center mt-5">
+                <a href="jobs.html" class="btn btn-outline-secondary px-4">← Back to Jobs</a>
+                <button type="button" class="btn btn-success px-5 fw-bold" data-bs-toggle="modal" data-bs-target="#applyModal">Apply Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apply Modal -->
+  <div class="modal fade" id="applyModal" tabindex="-1" aria-labelledby="applyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0 shadow">
+        <div class="modal-header bg-success text-white rounded-top-4">
+          <h5 class="modal-title fw-bold" id="applyModalLabel">Apply for Farm Assistant</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form id="apply-form">
+            <div class="mb-3">
+              <label for="apply-email" class="form-label fw-bold">Email Address</label>
+              <input type="email" class="form-control" id="apply-email" placeholder="name@example.com" required>
+            </div>
+            <div class="mb-3">
+              <label for="apply-phone" class="form-label fw-bold">Phone Number (10 digits)</label>
+              <input type="text" class="form-control" id="apply-phone" placeholder="e.g. 9876543210" required>
+            </div>
+            <button type="submit" class="btn btn-success w-100 fw-bold py-2">Submit Application</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="py-4 text-center text-muted mt-5" style="background: #0F172A; border-top: 1px solid rgba(255,255,255,0.1);">
+    <div class="container">
+      <p class="mb-0 text-white">© 2025 RuralConnect. Empowering Rural Communities Through Employment.</p>
+    </div>
+  </footer>
+
+  <script src="../SkillNest/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Lab 5: Countdown Timer
+    const deadline = new Date();
+    deadline.setDate(deadline.getDate() + 7);
+
+    const timerDisplay = document.getElementById('timer-display');
+
+    const countdown = setInterval(function() {
+      const now = new Date().getTime();
+      const timeleft = deadline.getTime() - now;
+
+      if (timeleft < 0) {
+        clearInterval(countdown);
+        timerDisplay.innerHTML = "EXPIRED";
+        return;
+      }
+
+      const days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
+      timerDisplay.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }, 1000);
+
+    // Lab 6: Regex Validation & Application Logic
+    document.getElementById('apply-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const email = document.getElementById('apply-email').value;
+      const phone = document.getElementById('apply-phone').value;
+
+      const phoneRegex = /^[789]\d{9}$/; 
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!emailRegex.test(email)) {
+        alert("Invalid Email Format! Please enter a valid email address.");
+        return;
+      }
+
+      if (!phoneRegex.test(phone)) {
+        alert("Invalid Phone Number! Must be 10 digits and start with 7, 8, or 9.");
+        return;
+      }
+
+      // Success
+      alert("Application Submitted Successfully!");
+
+      // Save to localStorage
+      const appliedJobs = JSON.parse(localStorage.getItem('appliedJobs') || '[]');
+      const jobData = {
+        title: "Farm Assistant",
+        company: "Green Valley Farms",
+        location: "Madhya Pradesh",
+        date: new Date().toLocaleDateString()
+      };
+      
+      // Check if already applied
+      if (!appliedJobs.some(job => job.title === jobData.title)) {
+        appliedJobs.push(jobData);
+        localStorage.setItem('appliedJobs', JSON.stringify(appliedJobs));
+      }
+
+      // Close modal
+      const modal = bootstrap.Modal.getInstance(document.getElementById('applyModal'));
+      modal.hide();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Course Directory | SkillNest</title>
+  <link href="bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light text-dark">
+
+  <nav class="navbar navbar-expand-lg navbar-dark site-navbar fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="home.html">
+        <span class="brand-name">SkillNest</span>
+        <small class="ms-2 nav-tagline m-0">Study with Buddy</small>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto gap-4 align-items-center">
+          <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="skills.html">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="../RuralConnect/index.html">Find a Job</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="profile.html">Profile</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="programming-header py-5 mt-5 bg-dark text-white text-center">
+    <div class="container py-5">
+      <h1 class="display-4 fw-bold text-info">Explore All Courses</h1>
+      <p class="lead text-light mx-auto" style="max-width: 800px;">Filter by category or search for specific skills to start your journey.</p>
+    </div>
+  </header>
+
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-md-6">
+          <div class="d-flex flex-wrap gap-2" id="category-filters">
+            <button class="btn btn-outline-info active" onclick="filterCategory('All')">All</button>
+            <button class="btn btn-outline-info" onclick="filterCategory('Programming')">Programming</button>
+            <button class="btn btn-outline-info" onclick="filterCategory('Web Development')">Web Dev</button>
+            <button class="btn btn-outline-info" onclick="filterCategory('Design')">Design</button>
+            <button class="btn btn-outline-info" onclick="filterCategory('Soft Skills')">Soft Skills</button>
+            <button class="btn btn-outline-info" onclick="filterCategory('Backend')">Backend</button>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <input type="text" id="course-search" class="form-control" placeholder="Search for a skill (e.g. Java, Figma)..." oninput="searchCourses()">
+        </div>
+      </div>
+
+      <div class="row g-4" id="course-list">
+        <!-- Courses will be injected here via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer py-4 bg-dark text-white text-center">
+    <div class="container">
+      <p class="mb-1">© 2025 SkillNest — Study with Buddy</p>
+      <small class="text-muted">Made with dedication by Team SkillNest</small>
+    </div>
+  </footer>
+
+  <script src="jquery.min.js"></script>
+  <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Lab 3: Array of Objects
+    const allCourses = [
+      { title: 'Python Mastery', category: 'Programming', level: 'Beginner', desc: 'Master the basics of Python programming.' },
+      { title: 'Java for Experts', category: 'Programming', level: 'Advanced', desc: 'Deep dive into OOP and system design with Java.' },
+      { title: 'Modern C++', category: 'Programming', level: 'Intermediate', desc: 'Learn performance-oriented coding with C++.' },
+      { title: 'Frontend Bootcamp', category: 'Web Development', level: 'Beginner', desc: 'HTML, CSS, and JS to build beautiful websites.' },
+      { title: 'React JS Crash Course', category: 'Web Development', level: 'Intermediate', desc: 'Build dynamic SPAs using React.' },
+      { title: 'Node.js & Express', category: 'Backend', level: 'Intermediate', desc: 'Create scalable server-side applications.' },
+      { title: 'Database Design', category: 'Backend', level: 'Beginner', desc: 'Master SQL and MongoDB for data storage.' },
+      { title: 'UI/UX with Figma', category: 'Design', level: 'Beginner', desc: 'Design user-centric interfaces from scratch.' },
+      { title: 'Digital Branding', category: 'Design', level: 'Intermediate', desc: 'Build a cohesive visual identity for brands.' },
+      { title: 'Public Speaking', category: 'Soft Skills', level: 'Intermediate', desc: 'Boost your confidence and communication skills.' },
+      { title: 'Team Leadership', category: 'Soft Skills', level: 'Advanced', desc: 'Lead teams effectively in a professional environment.' }
+    ];
+
+    let currentCategory = 'All';
+    let currentSearch = '';
+
+    function renderCourses() {
+      const container = document.getElementById('course-list');
+      container.innerHTML = '';
+      
+      const filteredCourses = allCourses.filter(course => {
+        const matchesCategory = currentCategory === 'All' || course.category === currentCategory;
+        const matchesSearch = course.title.toLowerCase().indexOf(currentSearch.toLowerCase()) !== -1;
+        return matchesCategory && matchesSearch;
+      });
+
+      if (filteredCourses.length === 0) {
+        container.innerHTML = '<div class="col-12 text-center text-muted py-5"><h3>No courses found matching your criteria.</h3></div>';
+        return;
+      }
+
+      // Lab 3: Use a for loop to display cards
+      for (let i = 0; i < filteredCourses.length; i++) {
+        const course = filteredCourses[i];
+        container.innerHTML += `
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 border-0 shadow-sm p-4 rounded-4 bg-white">
+              <span class="badge bg-info text-dark align-self-start mb-3">${course.category}</span>
+              <h4 class="fw-bold text-info">${course.title}</h4>
+              <p class="text-muted small mb-3">${course.desc}</p>
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <span class="text-muted fw-bold">${course.level}</span>
+                <button class="btn btn-outline-info btn-sm">Enroll Now</button>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    function filterCategory(category) {
+      currentCategory = category;
+      // Update active state of buttons
+      const buttons = document.querySelectorAll('#category-filters button');
+      buttons.forEach(btn => {
+        if (btn.innerText === category || (category === 'All' && btn.innerText === 'All') || (category === 'Web Development' && btn.innerText === 'Web Dev')) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+      renderCourses();
+    }
+
+    function searchCourses() {
+      currentSearch = document.getElementById('course-search').value;
+      renderCourses();
+    }
+
+    // Handle URL parameters for category
+    window.onload = () => {
+      const params = new URLSearchParams(window.location.search);
+      const cat = params.get('category');
+      if (cat) {
+        filterCategory(cat);
+      } else {
+        renderCourses();
+      }
+    };
+  </script>
+</body>
+</html>
